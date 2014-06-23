@@ -7,7 +7,7 @@ class Tree:
     def grow(self):
         self.grown= True
         
-    def burn(self, my_row_index, my_column_index, trees):           
+    def burn(self, my_row_index, my_column_index, trees):            ## recursive, 자신과 양 옆 나무를 태움
         if self.grown== True:
             self.grown= False
 
@@ -36,13 +36,13 @@ class Tree:
 f=0.1
 
 count=0
-max_step = 4       
+max_step = 4       ## number of iteration
 num_trees_row = 5
 num_trees_column= 5
 
 trees=[]
 
-
+## matrix 생성
 
 
 for row_index in range (num_trees_row):
@@ -53,12 +53,18 @@ for row_index in range (num_trees_row):
 
 
 
+## iteration 진행
+
 for step in range(max_step):
 
+    ## tree 생성
+    
     for i in range(num_trees_row):
         for j in range(num_trees_column):
             if random.random()<=trees[i][j].p:
                 trees[i][j].grow()
+
+    ## burning
                 
     for i in range(num_trees_row):
         for j in range(num_trees_column):
@@ -67,11 +73,17 @@ for step in range(max_step):
 
 
 
+## 살아남은 나무 count
+
 for i in range(num_trees_row):
     for j in range(num_trees_column):
         if trees[i][j].grown:
             count=count+1
 print "count after burning=", count
+
+
+
+## 결과 print
 
                 
 for i in range(num_trees_row):
