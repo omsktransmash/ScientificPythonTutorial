@@ -45,7 +45,9 @@ trees = []
 for row_index in range(tree_row):
     for col_index in range(tree_col):
         row_list.append(Tree())
+        col_list.append(Tree())
     trees.append(row_list)
+    trees.append(col_list)
         
 
 for step in range(max_step):
