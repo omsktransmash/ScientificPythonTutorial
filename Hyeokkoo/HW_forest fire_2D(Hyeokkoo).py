@@ -15,7 +15,7 @@ class Tree:
                 left_tree=trees[my_row_index][my_column_index-1]
                 left_tree.burn(my_row_index, my_column_index-1, trees)
 
-            if my_column_index < len(trees)-1:
+            if my_column_index < len(trees[0])-1:
                 right_tree=trees[my_row_index][my_column_index+1]
                 right_tree.burn(my_row_index, my_column_index+1, trees)
             
@@ -24,7 +24,7 @@ class Tree:
                 above_tree=trees[my_row_index-1][my_column_index]
                 above_tree.burn(my_row_index-1, my_column_index, trees)
 
-            if my_row_index < len(trees[0])-1:
+            if my_row_index < len(trees)-1:
                 below_tree=trees[my_row_index+1][my_column_index]
                 below_tree.burn(my_row_index+1, my_column_index, trees)
             
