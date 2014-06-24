@@ -1,6 +1,7 @@
 
 import random
 
+result_set=[]
 
 for grow_rate in range(101):
     for fire_rate in range(101):
@@ -40,11 +41,12 @@ for grow_rate in range(101):
         f=(fire_rate+0.00)/100
 
         count=0
-        max_step = 10      
+        max_step = 10
         num_trees_row = 25
         num_trees_column= 25
 
         trees=[]
+
 
 
         for row_index in range (num_trees_row):
@@ -52,7 +54,6 @@ for grow_rate in range(101):
             for index in range (num_trees_column):
                 trees_row.append(Tree())
             trees.append(trees_row)
-
 
 
 
@@ -64,7 +65,6 @@ for grow_rate in range(101):
                     if random.random()<=trees[i][j].p:
                         trees[i][j].grow()
 
-                        
             for i in range(num_trees_row):
                 for j in range(num_trees_column):
                     if random.random()<=f:
@@ -73,12 +73,30 @@ for grow_rate in range(101):
             for i in range(num_trees_row):
                 for j in range(num_trees_column):
                     if trees[i][j].grown:
-                        count=count+1     
+                        count=count+1       
 
 
 
         result=[trees[1][1].p,f,count]
         print result
+        result_set.append(result)
 
 
+
+
+max_count=0
+optimization_set=[]
+
+for result in result_set:
+    if result[1]>0:
+        if result[2]>max_count:
+            if optimization_set is not None:
+                del optimization_set[:]
+            optimization_set.append(result)
+            max_count=result[2]
+
+
+print optimization_set
+            
+    
 
