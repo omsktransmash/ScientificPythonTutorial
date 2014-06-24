@@ -15,7 +15,7 @@ class Tree:
                 up_tree = trees[row_index-1][col_index]
                 up_tree.burn(row_index-1, col_index, trees)
             if row_index < len(trees) -1:
-                down_tree = trees[row-index+1][col_index]
+                down_tree = trees[row_index+1][col_index]
                 down_tree.burn(row_index +1,col_index, trees)
             if col_index > 0:
                 left_tree= trees[row_index][col_index-1]
@@ -33,49 +33,46 @@ f = 0.05
 
 
 max_step = 10
-row = 10
-col = 10
+tree_row = 5
+tree_col = 5
 
 
+row_list=[]
+col_list=[]
+trees = []
 
-row= []
-col = []
-trees = [row, col]
 
-
-for i in range(row):
-    for j in range(col):
-        row.append(Tree())
-        col.append(Tree())
-    trees.append(Tree())
+for row_index in range(tree_row):
+    for col_index in range(tree_col):
+        row_list.append(Tree())
+    trees.append(row_list)
         
 
 for step in range(max_step):
     
-    for row in range(row):
-        for col in range(col):
-            if random.random() <= tree[row][col].p:
-                tree[row][col].grow()
+    for row in range(tree_row):
+        for col in range(tree_col):
+            if random.random() <= trees[row][col].p:
+                trees[row][col].grow()
 
     
-    for row in range(row):
-        for col in range(col):
-            tree = trees[t_index]
+    for row in range(tree_row):
+        for col in range(tree_col):
             if random.random() <= f:
-                tree[row][col].burn(row_index,col_index, trees)
+                trees[row][col].burn(row,col,trees)
     
     count = 0
     
-    for row in range(row):
-        for col in range(col):
-            if tree[row][col].grown:
+    for row in range(tree_row):
+        for col in range(tree_col):
+            if trees[row][col].grown:
                 count = count + 1
 
     #print count
 
-    for row in range(row):
-        for col in range(col):
-            if tree[row][col].grown:
+    for row in range(tree_row):
+        for col in range(tree_col):
+            if trees[row][col].grown:
                 print "1",
             else:
                 print "0",
