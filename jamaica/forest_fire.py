@@ -20,7 +20,10 @@ class Tree:
                 right_tree.burn(my_index +1, trees)
     
     def __init__(self):
-        self.p = 0.2    
+        self.p = 0.2
+
+    def show_status(self):
+        print self.p, self.grown
 
 
 f = 0.05
@@ -30,7 +33,8 @@ num_trees = 30
 
 trees = []
 for index in range(num_trees):
-    trees.append(Tree())
+    tree = Tree()
+    trees.append(tree)
 
 
 for step in range(max_step):
@@ -39,11 +43,13 @@ for step in range(max_step):
         if random.random() <= tree.p:
             tree.grow()
 
-    
+
+    strucks = []
     for t_index in range(0,len(trees)):
         tree = trees[t_index]
         if random.random() <= f:
             tree.burn(t_index,trees)
+            strucks.append(t_index)
     
     count = 0
     for tree in trees:
@@ -59,6 +65,9 @@ for step in range(max_step):
             print "0",
             
     print ""
+
+    print strucks
+    
 
 
 
