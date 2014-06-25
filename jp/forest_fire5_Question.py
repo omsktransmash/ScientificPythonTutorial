@@ -46,7 +46,7 @@ for row in range(num_rows):
 
 for step in range(max_step):
     
-    # Create forest  
+    # forest  
     for row in range(num_rows):
         for col in range(num_columns):
             if random.random() <= trees[row][col].p :
@@ -57,7 +57,7 @@ for step in range(max_step):
         print "\n",        
     print " -- Forest_Fire -- \n",
     
-    # Execute forest_fire
+    # forest_fire
     for row in range(num_rows):
         for col in range(num_columns):
             print trees[row][col].grown

@@ -105,7 +105,7 @@ print "\n", "global optimum :", "p=", global_optimization_set[0][0], "f=", globa
 
 
             
-## locam optimum
+## local optimum
 
 from operator import itemgetter
 sorted_result_set=sorted(result_set, key=itemgetter(1))

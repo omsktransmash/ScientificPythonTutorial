@@ -26,10 +26,7 @@ class Tree:
                 down_tree.burn(my_row_index +1,my_col_index, trees)
     
     def __init__(self):
-        self.p = 0.2
-
-    def show_status(self):
-        print self.p, self.grown
+        self.p = 0.2    
 
 
 f = 0.05
@@ -41,12 +38,6 @@ tree_col = 5
 trees_row = []
 trees_col = []
 trees = []
-<<<<<<< HEAD
-for index in range(num_trees):
-    tree = Tree()
-    trees.append(tree)
-=======
->>>>>>> origin/master
 
 ##making land for trees
 for row_index in range(tree_row):
@@ -60,38 +51,6 @@ for row_index in range(tree_row):
 ##growing trees
 for step in range(max_step):
     
-<<<<<<< HEAD
-    for tree in trees:
-        if random.random() <= tree.p:
-            tree.grow()
-
-
-    strucks = []
-    for t_index in range(0,len(trees)):
-        tree = trees[t_index]
-        if random.random() <= f:
-            tree.burn(t_index,trees)
-            strucks.append(t_index)
-    
-    count = 0
-    for tree in trees:
-        if tree.grown:
-            count = count + 1
-
-    #print count
-
-    for tree in trees:
-        if tree.grown:
-            print "1",
-        else:
-            print "0",
-            
-    print ""
-
-    print strucks
-    
-
-=======
         for i in range(tree_row):
             for j in range(tree_col):
                 if random.random() <= trees[i][j].p:
@@ -126,7 +85,6 @@ for step in range(max_step):
                     print "0",
             print ""
         print ""
->>>>>>> origin/master
 
 
 
