@@ -1,8 +1,8 @@
 import random
 
 
-n_spot = 20
-g = 0.5
+n_spot = 10
+g = 0.45
 f = 0.2
 adjust = 0.1
 
