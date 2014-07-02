@@ -150,6 +150,11 @@ while enemy.hp>0 and queen.hp>0:
     queen_hps.append(queen.hp)
     num_worker.append(len(worker_bee))
     num_warrior.append(len(warrior_bee))
+
+if enemy.hp<0:
+    print "bees win"
+elif queen.hp<0:
+    print "enemy wins"
     
 
 # print steps, "\n", enemy_hps, "\n"    , queen_hps, "\n" , num_worker, "\n", num_warrior
