@@ -1,0 +1,4 @@
+Host: 137.68.160.158
+id: abm
+pw: dpdlqldpa
+schema: abm_seminar
