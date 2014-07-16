@@ -6,7 +6,8 @@ import matplotlib.pyplot as plt
 num_bees = 1000
 warrier_ratio=0.3 #ration of warrier bees
 num_warriers = int(num_bees * warrier_ratio)
-num_workers = int(num_bees - num_warriers)
+num_workers = int(num_bees -
+                  num_warriers)
 
 #declare running modes
 random_hp = False
@@ -48,9 +49,10 @@ class Worker(Bee):
     def __init__(self):
         Bee.__init__(self)
 
-    def regenerate_hive(hive):
+    def regenerate_hive(self,hive):
         #regenerate hive.
         hive.hp += repair
+        
 
 
 class Warrier(Bee):
