@@ -84,6 +84,6 @@ while connected == False:
 
     connected = nx.is_connected(G)
 
-#nx.draw(G)
-#plt.show()
+nx.draw(G)
+plt.show()
 print nx.average_shortest_path_length(G)

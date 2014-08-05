@@ -137,7 +137,7 @@ for j in range (0,100):
         
     two_d_plot.append(nth_row)
 
-
+print two_d_plot
 # Result 
 print "done"    
 pcolor(numpy.array(two_d_plot))
